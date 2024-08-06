@@ -1,0 +1,152 @@
+/* Общие стили */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #337ab7;
+  }
+  
+  a:hover {
+    color: #23527c;
+  }
+  
+  /* Стили для шапки */
+  
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #sidebar.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  #sidebar.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #sidebar.menu li {
+    margin-bottom: 10px;
+  }
+  
+  #sidebar.menu li a {
+    color: #fff;
+  }
+  
+  #sidebar.menu li a:hover {
+    color: #ccc;
+  }
+  
+  /* Стили для контента */
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .content p {
+    margin-bottom: 20px;
+  }
+  
+  /* Стили для форм */
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form input[type="text"], form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  form input[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #23527c;
+  }
+  
+  /* Стили для таблиц */
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  /* Стили для кнопок */
+  
+  button {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #23527c;
+  }
+  
+  /* Стили для ошибок */
+  
+  .error {
+    color: #f00;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Стили для成功ных сообщений */
+  
+  .success {
+    color: #0f0;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }

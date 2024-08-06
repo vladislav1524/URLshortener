@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/base.css'%}" rel="stylesheet">
+    <title>{% block title %}Shortener{% endblock %}</title>
+</head>
+<body>
+    <div id="sidebar">
+        <a href="/" class="logo">Shortener</a> <br>
+        <ul class="menu">
+            {% if user.is_authenticated %}
+                <li>
+                    Пользователь: {{ user.username }}
+                </li>
+                <li>
+                    <form method="post" action="{% url 'logout' %}">
+                        <input type="submit" value="Выйти из учётной записи">
+                        {% csrf_token %}
+                    </form> 
+                </li>
+                <li>
+                    <form method="post" action="{% url 'password_change' %}">
+                        <input type="submit" value="сменить пароль">
+                        {% csrf_token %}
+                    </form> 
+                </li>
+                {% else %}
+            <li>
+                <form method="post" action="{% url 'login' %}">
+                    <input type="submit" value="Войти">
+                    {% csrf_token %}
+                </form>
+            </li>
+            <li>
+                <form method="post" action="{% url 'register' %}">
+                    <input type="submit" value="Регистрация">
+                    {% csrf_token %}
+                </form>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

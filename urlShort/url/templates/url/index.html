@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Shortener{% endblock %}
+
+{% block content %}
+    <h1>Сократитель ссылок</h1>
+        <form action="{% url 'url:urlShort' %}" method="post">
+            {{ form.as_p }}
+            <input type="submit" value="сократить">
+            {% csrf_token %}
+        </form>
+        <br>
+        {% if url and shorten_url %}
+
+               <strong>Ваша ссылка - </strong><a href="{{ url }}">{{ url }}</a> <br>
+               <strong>сокращённая ссылка</strong> - <a href="{{ shorten_url }}">{{ shorten_url }}</a>
+        {% endif %}
+{% endblock %}
